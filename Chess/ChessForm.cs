@@ -249,7 +249,7 @@ namespace Chess
                 menu.Items.Add(item);
             }
 
-            menu.Closed += (_, _) => menu.Dispose();
+            menu.Closed += (_, _) => squareButtons[file, rank].BeginInvoke((Action)menu.Dispose);
             menu.Show(squareButtons[file, rank], new Point(0, squareButtons[file, rank].Height));
         }
 
